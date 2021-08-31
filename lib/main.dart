@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hayfood/pages/initial_page.dart';
 import 'package:hayfood/routes/routes.dart';
-
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -9,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: routes,
-      initialRoute: 'login',
-      title: 'Hay Food',      
+      routes: routes,      
+      title: 'Hay Food',   
+      home: InitialPage(),   
       theme: ThemeData(
         accentColor: Color.fromRGBO(255, 161, 45, 1.0),
         primaryColor: Color.fromRGBO(6, 0, 117, 1.0),

@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:hayfood/provider/google_sign_in_provider.dart';
 import 'package:hayfood/widgets/headerText.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -64,7 +66,9 @@ Widget buttonSignIn(BuildContext context) {
     margin: EdgeInsets.only(top: 20.0),
     child: ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, 'home-page');
+        final provider =
+              Provider.of<GoogleSignInProvider>(context, listen: false);
+          provider.login();
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

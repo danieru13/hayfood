@@ -2,18 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:hayfood/widgets/backIcon.dart';
 import 'package:hayfood/widgets/headerText.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:hayfood/widgets/signOutButton.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        leading: Builder(builder: (BuildContext context) {
-          return backIcon(context);
-        }),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0.0,
+      //   leading: Builder(builder: (BuildContext context) {
+      //     return Padding(
+      //       padding: EdgeInsets.symmetric(horizontal: 15.0,vertical:5.0),
+      //       child: Row(              
+      //         children: [
+      //           backIcon(context),
+      //           signOutWidget(context),
+      //         ],
+      //       )
+      //     );
+      //   }),
+      // ),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -22,6 +31,7 @@ class HomePage extends StatelessWidget {
               Container(
                 child: Column(
                   children: [
+                    customAppBar(context),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
@@ -262,4 +272,15 @@ Widget infoRestaurant(BuildContext context, String restaurantName,
       )
     ],
   );
+}
+Widget customAppBar(BuildContext context){
+  return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.0,vertical:5.0),        
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+                backIcon(context),
+                signOutWidget(context),
+          ],
+        ),);        
 }
