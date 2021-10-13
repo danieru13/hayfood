@@ -114,7 +114,7 @@ class RestaurantPage extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 13.0,
                                         fontFamily: 'Roboto',
-                                        color: Colors.green,
+                                        color: res.open == "Open Now" ? Colors.green: Colors.red,
                                       ))
                                 ]),
                               ],

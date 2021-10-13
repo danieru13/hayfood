@@ -103,9 +103,8 @@ class _HomePageState extends State<HomePage> {
                             child: GridView.count(
                               shrinkWrap: true,
                               crossAxisCount: 1,
-                              childAspectRatio: (itemWidth / itemHeight),
-                              //children: listRest(context, snapshot.data)
-                              children: [listaDeRes(context, snapshot.data)],
+                              childAspectRatio: (itemWidth / itemHeight),                              
+                              children: [restaurantList(context, snapshot.data)],
                             ),
                           ),
                         ],
@@ -151,73 +150,81 @@ Widget sliderFoodCard() {
 }
 
 Widget _tarjeta(context, Restaurant res) {
-  return Container(
-    margin: EdgeInsets.all(5.0),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image(
-              width: 270.0,
-              height: 200.0,
-              fit: BoxFit.cover,
-              image: NetworkImage(res.image),
-            )),
-        Padding(
-          padding: const EdgeInsets.only(left: 5.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 10.0),
-                width: 270,
-                child: Text(
-                  res.name,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17.0),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              Container(
-                width: 270,
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  res.address,
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13.0,
+  return GestureDetector(
+      onTap:(){
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => RestaurantPage(res)));
+      },
+      child: Container(
+      margin: EdgeInsets.all(5.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image(
+                width: 270.0,
+                height: 200.0,
+                fit: BoxFit.cover,
+                image: NetworkImage(res.image),
+              )),
+          Padding(
+            padding: const EdgeInsets.only(left: 5.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10.0),
+                  width: 270,
+                  child: Text(
+                    res.name,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.0),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    color: Colors.yellow,
-                    size: 16,
+                Container(
+                  width: 270,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    res.address,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  Text(res.rating,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13.0)),
-                  Text(" " + res.open,
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13.0)),
-                ],
-              )
-            ],
-          ),
-        )
-      ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                      size: 16,
+                    ),
+                    Text(res.rating,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13.0)),
+                    Text(" " + res.open,
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13.0)),
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     ),
   );
 }
@@ -236,7 +243,7 @@ Widget headerRes(BuildContext context, String textHeader) {
   );
 }
 
-Widget listaDeRes(context, data) {
+Widget restaurantList(context, data) {
   return ListView.builder(
       shrinkWrap: true,
       itemCount: data.length,
