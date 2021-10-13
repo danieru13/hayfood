@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hayfood/widgets/backIcon.dart';
 import 'package:hayfood/widgets/headerText.dart';
-
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
+  @override
+  _MenuPageState createState() => _MenuPageState();
+}
+class _MenuPageState extends State<MenuPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +56,7 @@ class MenuPage extends StatelessWidget {
         ),
       ),
     );
-  }
+  }  
 }
 
 Widget menuItems(BuildContext context, String foto) {
