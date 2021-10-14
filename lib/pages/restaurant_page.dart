@@ -25,7 +25,7 @@ class RestaurantPage extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 20),
-                      child: backIcon(context),
+                      child: backIcon(context,Colors.white,1),
                     )
                   ],
                 ),

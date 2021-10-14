@@ -380,7 +380,7 @@ Widget customAppBar(BuildContext context) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        backIcon(context),
+        backIcon(context, Colors.black,0),
         signOutWidget(context),
       ],
     ),

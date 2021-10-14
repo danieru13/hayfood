@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 
-Widget backIcon(BuildContext context){
+Widget backIcon(BuildContext context, color, pop){
   return IconButton(
     icon: Icon(
       Icons.arrow_back,
-      color: Colors.black,
+      color: color,
       size: 28.0,
     ),
     onPressed: (){
-      Navigator.pop(context);
+      if(pop == 1){
+        Navigator.pop(context);
+      }      
     },
   );
 }

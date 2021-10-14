@@ -14,7 +14,7 @@ class _MenuPageState extends State<MenuPage> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: Builder(builder: (BuildContext context) {
-          return backIcon(context);
+          return backIcon(context, Colors.black,1);
         }),
       ),
       body: SafeArea(
@@ -62,88 +62,80 @@ class _MenuPageState extends State<MenuPage> {
 Widget menuItems(BuildContext context, String foto) {
   return Column(
     children: [
-      Container(
-        margin: EdgeInsets.only(left: 10),
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: Row(
-                children: [
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image(
-                        fit: BoxFit.cover,
-                        height: 80.0,
-                        image: NetworkImage(foto),
-                        width: 80.0,
-                      )),
-                  Container(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                            margin: EdgeInsets.symmetric(vertical: 7.0),
-                            child: headerText("Plato ejemplo", Colors.black,
-                                FontWeight.bold, 17.0)),
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          margin: EdgeInsets.only(bottom: 5.0),
-                          child: Text(
-                            "Descripcion",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 13.0),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                              size: 16.0,
-                            ),
-                            Text(
-                              '4.5',
+      GestureDetector(
+          onTap: (){Navigator.pushNamed(context, "detail");},
+          child: Container(        
+          margin: EdgeInsets.only(left: 10),
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image(
+                          fit: BoxFit.cover,
+                          height: 80.0,
+                          image: NetworkImage(foto),
+                          width: 80.0,
+                        )),
+                    Container(
+                      padding: EdgeInsets.only(left: 20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              margin: EdgeInsets.symmetric(vertical: 7.0),
+                              child: headerText("Plato ejemplo", Colors.black,
+                                  FontWeight.bold, 17.0)),
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.only(bottom: 5.0),
+                            child: Text(
+                              "Descripcion",
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13.0),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(left: 5.0),
-                              child: Text(
-                                "COP 20,000",
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 16.0,
+                              ),
+                              Text(
+                                '4.5',
                                 style: TextStyle(
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 13.0),
                               ),
-                            ),
-                          ],
-                        )
-                      ],
+                              Container(
+                                margin: EdgeInsets.only(left: 5.0),
+                                child: Text(
+                                  "COP 20,000",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13.0),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                children: [Icon(Icons.add)],
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Theme.of(context).accentColor,
-                shape: CircleBorder(),
-                padding: EdgeInsets.symmetric(vertical: 13),
-              ),
-            )
-          ],
+                  ],
+                ),
+              ),            
+            ],
+          ),
         ),
       )
     ],
