@@ -65,10 +65,12 @@ Widget buttonSignIn(BuildContext context) {
     height: 45.0,
     margin: EdgeInsets.only(top: 20.0),
     child: ElevatedButton(
-      onPressed: () {
+      onPressed: (){
         final provider =
               Provider.of<GoogleSignInProvider>(context, listen: false);
-          provider.login();
+          
+          provider.login();          
+          
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
