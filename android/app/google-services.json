@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "284457472619",
+    "project_id": "hayfood-7d3cd",
+    "storage_bucket": "hayfood-7d3cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284457472619:android:db717db572891016be972e",
+        "android_client_info": {
+          "package_name": "com.example.hayfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284457472619-5nnb7hhohcv6a0uejpqa1ed2leoo8ag0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hayfood",
+            "certificate_hash": "7d7c944f1bbd04c552c26d71bb23dbc0eb070070"
+          }
+        },
+        {
+          "client_id": "284457472619-rqb78j8sl6lo8f8q1q3tn57ubl1rftk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hayfood",
+            "certificate_hash": "7b60061d5008c10c846923c0b6b8f1f74b8e89d2"
+          }
+        },
+        {
+          "client_id": "284457472619-8734r9cejo48uim34km4pkbu27qq8949.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-C9L77Fa0DxHr6U-2erdE8FoKSnq6OHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284457472619-8734r9cejo48uim34km4pkbu27qq8949.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
